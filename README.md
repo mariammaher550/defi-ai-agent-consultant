@@ -4,73 +4,75 @@
 
 ## Product Roadmap Overview
 
-Our ultimate mission is to enable decentralised finance applications anywhere, starting in regions where crypto adoption is slowed by regulation or weak infrastructure. We pursue a hybrid architecture that respects local compliance while offering Web3-native features through modular design.
+Our ultimate mission is to enable decentralized finance applications globally, starting in regions where crypto adoption is slowed by regulation or weak infrastructure. We follow a hybrid architecture that respects local compliance while offering Web3-native features through modular design. Currently, most users rely on CeFi applications due to their simplicity, fixed fees, and integrated tools. With our AI agent, users can manage their funds as smoothly as in CeFi—while benefiting from added DeFi wallet features.
 
 ## 🌍 Focus Areas
 
-We categorise our roadmap into two primary directions:
+We categorize our roadmap into two primary directions:
 
-- **Local Market Features** – Tailored for emerging markets (like Egypt, Algeria, Lebanon, and South Africa) where crypto is often treated as a threat to fiat sovereignty. These features comply with local regulations and provide licensed, regulated access to financial tools.
-- **Global Web3 Features** – A separate track focused on DeFi-native tools, like on-chain credit, AMMs, DAOs, and yield aggregators.
+* **Local Market Features** – Tailored for emerging markets (e.g., Egypt, Algeria, Lebanon, and South Africa), where crypto is often viewed as a threat to fiat sovereignty. These features comply with local regulations and offer licensed, regulated access to financial tools.
+* **Global Web3 Features** – A distinct track focused on DeFi-native tools such as on-chain credit, AMMs, DAOs, and yield aggregators.
 
 ## 🇪🇬 Local Market Features
 
 ### 💰 Regulated Coin Infrastructure
 
-Our Regulated Coin system is a programmable fiat wrapper for seamless fiat inflows and outflows management. We handle:
-- Fiat custody through licensed partners
-- On-chain minting/burning
-- Real-time KYC/AML compliance
-- Transaction approval via our Rules Engine
+Our Regulated Coin system is a programmable fiat wrapper enabling seamless fiat inflows and outflows. We manage:
+
+* Fiat custody via licensed partners
+* On-chain minting/burning
+* Real-time KYC/AML compliance
+* Transaction approval through our Rules Engine
 
 ### ⚙️ Dynamic Rules Engine
 
-Every on-chain action passes through a modular Rules Engine with modules for:
-- **Stock Broker Module**: Enforces investor registration and KYC
-- **E-Commerce Module**: Applies tax policies and regional restrictions
-- **Banking Module**: Adds AML checks and enforces withdrawal limits
+Each on-chain action is processed through a modular Rules Engine featuring:
+
+* **Stock Broker Module** – Enforces investor registration and KYC
+* **E-Commerce Module** – Applies tax policies and regional restrictions
+* **Banking Module** – Implements AML checks and enforces withdrawal limits
 
 ### 🌟 Key Benefits
 
-- Zero On-Chain Fees
-- Real-Time Settlement
-- DeFi-Like UX
-- Interoperability
-- Regulatory Protection
-- Compliant by Design
-- No Backend Ops Needed
-- Custom Rules Per App Type
-- Support for Regulated Coin Lifecycle
+* Real-Time Settlement
+* DeFi-Like UX
+* Interoperability
+* Regulatory Protection
+* Compliant by Design
+* No Backend Ops Required
+* Custom Rules Per App Type
+* Full Regulated Coin Lifecycle Support
 
 ## 📦 Funds Orderbook
 
-Tokenised access to local investment funds through NFT certificates, enabling:
-- Instant liquidity via NFT-backed loans
-- Yield delegation
-- Participation in secondary markets
+Tokenized access to local investment funds via NFT certificates enables:
+
+* Instant liquidity through NFT-backed loans
+* Yield delegation
+* Secondary market participation
 
 ### 🌟 Key Benefits
 
-- Programmable Financial Products
-- On-Chain Compliance
-- Streamlined Settlement
-- Zero Fees
+* Programmable Financial Products
+* On-Chain Compliance
+* Streamlined Settlement
+* Zero Fees
 
 ## 🌍 Global Market Features
 
 ### 🤖 Wallet Agent Consultant Feature
 
-AI Wallet Agents powered by ERC-4337 smart contract wallets, offering automation, yield optimization, and cross-chain execution while keeping users in control.
+AI Wallet Agents powered by ICP canisters provide automation, yield optimization, and cross-chain execution—while keeping users in control. Designed for a smooth UX that enables everyday users to adopt DeFi wallets instead of CeFi platforms.
 
 ### 🌟 Key Benefits
 
-- Automated Cross-Chain DeFi
-- Modular Strategy Subscriptions
-- Fiat Gateway Optimization
-- Multiple Wallet Management
-- On-Chain Performance Monitoring
-- Charity Integration
-- NFT Collector Intelligence
+* Non-Custodial
+* Automated Cross-Chain DeFi (e.g., arbitrage, higher-yield products)
+* Integration with DeFi protocols across chains
+* Fiat Gateway Optimization
+* Multiple Wallet Management
+* On-Chain Performance Monitoring
+* NFT Collector Intelligence
 
 ### ⚙️ How It Works
 
@@ -82,3 +84,4 @@ AI Wallet Agents powered by ERC-4337 smart contract wallets, offering automation
 6. Optional Modules
 
 ## 🖥️ Internet Computer (ICP)
+
