@@ -4,7 +4,8 @@
 
 ## Project Management
 
-* [Agile Scrum Board](https://lumbar-diplodocus-5cf.notion.site/Agile-Scrum-Board-1cd5e5529927804bb5d4cdd43353c6f1?pvs=74ad) - Track current sprint progress and backlog
+* [Picth Deck](https://docs.google.com/presentation/d/1yY9xBJqHpL_IHOazUPo3OgIJfJ-XmnD6NodnTUgAOo4/edit?usp=sharing)
+*  [Agile Scrum Board](https://lumbar-diplodocus-5cf.notion.site/Agile-Scrum-Board-1cd5e5529927804bb5d4cdd43353c6f1?pvs=74ad) - Track current sprint progress and backlog
 * [Product Roadmap](https://lumbar-diplodocus-5cf.notion.site/RoadMap-22b5e5529927805a9f38c604fdd8d4bb) - Long-term development plan and milestones
 
 ## Repository Structure
