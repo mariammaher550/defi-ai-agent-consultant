@@ -10,7 +10,7 @@ use types::*;
 
 // Mock test for ICRC-1 name
 #[test]
-fn test_icrc1_name() {
+fn test_name() {
     // In a real test, this would query the canister
     // For now, we'll just assert the expected value
     let name = "ICRC-3 Token";
@@ -18,25 +18,25 @@ fn test_icrc1_name() {
 }
 
 #[test]
-fn test_icrc1_symbol() {
+fn test_symbol() {
     let symbol = "ICRC3";
     assert_eq!(symbol, "ICRC3");
 }
 
 #[test]
-fn test_icrc1_decimals() {
+fn test_decimals() {
     let decimals: u8 = 8;
     assert_eq!(decimals, 8);
 }
 
 #[test]
-fn test_icrc1_fee() {
+fn test_fee() {
     let fee = 10000;
     assert_eq!(fee, 10000);
 }
 
 #[test]
-fn test_icrc1_metadata() {
+fn test_metadata() {
     // Mock metadata entries
     let metadata = vec![
         ("icrc1:name".to_string(), Value::Text("ICRC-3 Token".to_string())),
@@ -53,7 +53,7 @@ fn test_icrc1_metadata() {
 }
 
 #[test]
-fn test_icrc1_total_supply() {
+fn test_total_supply() {
     // Initial total supply
     let initial_supply = Nat::from(0);
     assert_eq!(initial_supply, Nat::from(0));
@@ -64,7 +64,7 @@ fn test_icrc1_total_supply() {
 }
 
 #[test]
-fn test_icrc1_minting_account() {
+fn test_minting_account() {
     // Mock minting account
     let minting_account = Some(Account {
         owner: Principal::management_canister(),
@@ -78,7 +78,7 @@ fn test_icrc1_minting_account() {
 }
 
 #[test]
-fn test_icrc1_balance_of() {
+fn test_balance_of() {
     // Mock account
     let account = Account {
         owner: Principal::from_slice(&[1, 2, 3]),
@@ -95,7 +95,7 @@ fn test_icrc1_balance_of() {
 }
 
 #[test]
-fn test_icrc2_allowance() {
+fn test_allowance() {
     // Mock accounts
     let owner = Account {
         owner: Principal::from_slice(&[1, 2, 3]),
@@ -123,7 +123,7 @@ fn test_icrc2_allowance() {
 }
 
 #[test]
-fn test_icrc3_get_blocks() {
+fn test_get_blocks() {
     // Mock accounts
     let account1 = Account {
         owner: Principal::from_slice(&[1, 2, 3]),
