@@ -92,53 +92,53 @@ fn record_transaction(tx: Transaction) -> BlockIndex {
 
 // ICRC-1 Standard Query Methods
 #[query]
-fn icrc1_name() -> String {
+fn name() -> String {
     TOKEN_DATA.with(|data| data.borrow().name.clone())
 }
 
 #[query]
-fn icrc1_symbol() -> String {
+fn symbol() -> String {
     TOKEN_DATA.with(|data| data.borrow().symbol.clone())
 }
 
 #[query]
-fn icrc1_decimals() -> u8 {
+fn decimals() -> u8 {
     TOKEN_DATA.with(|data| data.borrow().decimals)
 }
 
 #[query]
-fn icrc1_fee() -> Nat {
+fn fee() -> Nat {
     TOKEN_DATA.with(|data| data.borrow().fee.clone())
 }
 
 #[query]
-fn icrc1_metadata() -> Vec<(String, Value)> {
+fn metadata() -> Vec<(String, Value)> {
     vec![
-        ("icrc1:name".to_string(), Value::Text(icrc1_name())),
-        ("icrc1:symbol".to_string(), Value::Text(icrc1_symbol())),
-        ("icrc1:decimals".to_string(), Value::Nat(Nat::from(icrc1_decimals() as u64))),
-        ("icrc1:fee".to_string(), Value::Nat(icrc1_fee())),
+        ("icrc1:name".to_string(), Value::Text(name())),
+        ("icrc1:symbol".to_string(), Value::Text(symbol())),
+        ("icrc1:decimals".to_string(), Value::Nat(Nat::from(decimals() as u64))),
+        ("icrc1:fee".to_string(), Value::Nat(fee())),
     ]
 }
 
 #[query]
-fn icrc1_total_supply() -> Nat {
+fn total_supply() -> Nat {
     TOKEN_DATA.with(|data| data.borrow().total_supply.clone())
 }
 
 #[query]
-fn icrc1_minting_account() -> Option<Account> {
+fn minting_account() -> Option<Account> {
     TOKEN_DATA.with(|data| data.borrow().minting_account.clone())
 }
 
 #[query]
-fn icrc1_balance_of(account: Account) -> Nat {
+fn balance_of(account: Account) -> Nat {
     get_account_balance(&account)
 }
 
 // ICRC-1 Transfer
 #[update]
-fn icrc1_transfer(args: TransferArgs) -> TransferResult {
+fn transfer(args: TransferArgs) -> TransferResult {
     let caller = ic_cdk::caller();
     let from = Account {
         owner: caller,
@@ -218,7 +218,7 @@ fn icrc1_transfer(args: TransferArgs) -> TransferResult {
 
 // ICRC-2 Approve
 #[update]
-fn icrc2_approve(args: ApproveArgs) -> ApproveResult {
+fn approve(args: ApproveArgs) -> ApproveResult {
     let caller = ic_cdk::caller();
     let from = Account {
         owner: caller,
@@ -326,7 +326,7 @@ fn icrc2_approve(args: ApproveArgs) -> ApproveResult {
 
 // ICRC-2 Allowance
 #[query]
-fn icrc2_allowance(args: AllowanceArgs) -> Allowance {
+fn allowance(args: AllowanceArgs) -> Allowance {
     let account = args.account;
     let spender = args.spender;
     
@@ -343,7 +343,7 @@ fn icrc2_allowance(args: AllowanceArgs) -> Allowance {
 
 // ICRC-2 Transfer From
 #[update]
-fn icrc2_transfer_from(args: TransferFromArgs) -> TransferFromResult {
+fn transfer_from(args: TransferFromArgs) -> TransferFromResult {
     let caller = ic_cdk::caller();
     let spender = Account {
         owner: caller,
@@ -471,7 +471,7 @@ fn icrc2_transfer_from(args: TransferFromArgs) -> TransferFromResult {
 
 // ICRC-3 Get Blocks
 #[query]
-fn icrc3_get_blocks(args: GetBlocksArgs) -> GetBlocksResult {
+fn get_blocks(args: GetBlocksArgs) -> GetBlocksResult {
     let start = args.start.clone();
     let length = args.length.clone();
     
