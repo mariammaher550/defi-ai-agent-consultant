@@ -13,6 +13,9 @@ use types::*;
 use utils::*;   
 use modules::whitelist::*;
 
+pub use modules::whitelist::{get_whitelist, add_to_whitelist, remove_from_whitelist, is_whitelisted};
+
+
 // Define the type of memory
 type Memory = VirtualMemory<DefaultMemoryImpl>;
 
@@ -138,54 +141,23 @@ fn remove_module(id: ModuleId) -> Result<(), String> {
     })
 }
 
-// Whitelist management API
 
-#[query]
-fn get_whitelist() -> Vec<WhitelistEntry> {
-    modules::whitelist::get_whitelist()
-}
-
-#[update]
-fn add_to_whitelist(args: AddToWhitelistArgs) -> WhitelistOperationResult {
-    modules::whitelist::add_to_whitelist(args)
-}
-
-#[update]
-fn remove_from_whitelist(args: RemoveFromWhitelistArgs) -> WhitelistOperationResult {
-    modules::whitelist::remove_from_whitelist(args)
-}
-
-#[query]
-fn is_whitelisted(principal: Principal) -> bool {
-    modules::whitelist::is_whitelisted(&principal)
-}
+mod engine;
 
 #[query]
 fn is_allowed(args: IsAllowedArgs) -> IsAllowedResult {
-    // First check if the receiver is on the whitelist
-    if !is_whitelisted(&args.to) {
-        return IsAllowedResult {
-            allowed: false,
-            message: Some(format!("Receiver {} is not on the whitelist", args.to)),
-        };
-    }
-    
-    // Get all active modules
-    let active_modules = RULE_MODULES.with(|modules| {
-        let modules_ref = modules.borrow();
-        modules_ref
-            .iter()
-            .filter(|(_, module)| module.status == ModuleStatus::Active)
-            .map(|(_, module)| module.clone())
-            .collect::<Vec<RuleModule>>()
-    });
-    
-    // In a real implementation, you would invoke each module's WASM code
-    // and only allow the transfer if all modules approve it
-    
-    // For now, we'll just return allowed=true since whitelist check passed
-    IsAllowedResult {
-        allowed: true,
-        message: None,
-    }
+    // Use the rules engine to apply all rules
+    engine::apply_all_rules(&args)
+}
+
+// Additional API endpoints for rule configuration
+
+#[query]
+fn is_rule_enabled(rule_name: String) -> bool {
+    engine::is_rule_enabled(&rule_name)
+}
+
+#[update]
+fn set_rule_enabled(rule_name: String, enabled: bool) -> Result<(), String> {
+    engine::set_rule_enabled(&rule_name, enabled)
 }

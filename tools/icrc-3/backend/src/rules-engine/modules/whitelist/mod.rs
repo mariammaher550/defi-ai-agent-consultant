@@ -1,8 +1,10 @@
 mod storage;
 mod types;
+mod api;
 
 pub use storage::*;
 pub use types::*;
+pub use api::*;
 
 use crate::rules_engine::types::{IsAllowedArgs, IsAllowedResult};
 use candid::Principal;
