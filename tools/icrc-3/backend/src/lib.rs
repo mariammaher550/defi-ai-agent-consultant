@@ -197,7 +197,7 @@ fn transfer(args: TransferArgs) -> TransferResult {
         let stable_to_balance = balances.get(&to)
             .unwrap_or_else(|| StableNat::from(0u64));
         balances.insert(to.clone(), stable_to_balance + stable_amount);
-    });
+    }); 
     
     // Record the transaction
     let transfer = Transfer {
